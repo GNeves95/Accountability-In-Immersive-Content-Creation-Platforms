@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6b54efcacdb1c5e4cabf8213663ed2f6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - initiator: {instanceID: 0}
+  - cube: {instanceID: 0}
+  - cylinder: {instanceID: 0}
+  - currentObject: {instanceID: 0}
+  - mat: {instanceID: 0}
+  - tablePrefab: {fileID: 7275427031444546376, guid: 848107c6136298e428a2fc155c1bac04, type: 3}
+  - evenRow: {fileID: 9089694949279296396, guid: 90987aa0bbd71324e8048f9c8a52c651, type: 3}
+  - oddRow: {fileID: 2540829886407578147, guid: 4e77225efd3aa1946998306e9e94d3e5, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f90d484ec978b8545adffb2b9f8ec923
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Baro
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c851d37c80777be45b7f4e81b09a14d1, type: 3}
+  - {fileID: 12800000, guid: 19ccc1bf403798148ac8b7193dda0e16, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
