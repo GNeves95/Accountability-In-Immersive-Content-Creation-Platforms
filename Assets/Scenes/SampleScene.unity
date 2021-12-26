@@ -1545,9 +1545,9 @@ MonoBehaviour:
   scene: 0
   initiator: {fileID: 0}
   debug: 0
-  transparentObjects: 1
-  diffView: 1
-  sceneView: 1
+  transparentObjects: 0
+  diffView: 0
+  sceneView: 0
   cube: {fileID: 275268529948680999, guid: 71f9ab809c22fba468c162d08b98612d, type: 3}
   cylinder: {fileID: 190771939337457933, guid: 04db7680f9abf184ab1cd4de5cab3dc8, type: 3}
   width: 0.05

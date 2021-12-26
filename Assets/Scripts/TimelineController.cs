@@ -143,7 +143,7 @@ public class TimelineController : MonoBehaviour
                 Destroy(td);
             }
 
-            if (sceneView)
+            if (sceneView || transparentObjects)
             {
                 GameObject[] sceneObjects = GameObject.FindGameObjectsWithTag("SceneObject");
                 foreach (GameObject sceneObject in sceneObjects)
@@ -325,7 +325,7 @@ public class TimelineController : MonoBehaviour
                 Destroy(td);
             }
 
-            if (sceneView)
+            if (sceneView || transparentObjects)
             {
                 while (hiddenObjectsContainer.transform.childCount > 0)
                 {
@@ -412,6 +412,8 @@ public class TimelineController : MonoBehaviour
 
             GameObject oldInstance = null;
 
+            long date = timelineEvents[eNum].when;
+
             foreach (TimelineEvent ev in timelineEvents) 
             {
                 if (currEvent == 0)
@@ -467,7 +469,60 @@ public class TimelineController : MonoBehaviour
                     break;
                 }
                 currEvent++;
-            };
+            }
+            if (sceneView)
+            {
+                Transform hocTran = hiddenObjectsContainer.transform;
+                for (int iter = 0; iter < hocTran.childCount; iter++)
+                {
+                    Transform childTran = hocTran.GetChild(iter);
+                    GameObject childGobj = childTran.gameObject;
+                    string prefabName = childGobj.name;
+                    VersionControl vc = childGobj.GetComponent<VersionControl>();
+                    TimelineEvent[] events = vc.events.ToArray();
+
+                    bool imported = false;
+                    GameObject sceneInstance = null;
+
+                    foreach (TimelineEvent ev in events)
+                    {
+                        if (ev.when > date)
+                        {
+                            break;
+                        }
+                        if (!imported)
+                        {
+                            Import impEv = (Import)ev;
+                            foreach (GameObject gObj in initiator.Prefabs)
+                            {
+                                if (gObj.name.Equals(snap.go.name))
+                                {
+                                    sceneInstance = Instantiate(gObj, impEv.coordinates, Quaternion.identity);
+                                    sceneInstance.tag = "Ghost";
+                                    sceneInstance.GetComponent<Renderer>().material = sceneGhostMat;
+                                    break;
+                                }
+                            }
+                            imported = true;
+                        }
+                        else
+                        {
+                            if (ev.type.Equals("translation"))
+                            {
+                                sceneInstance.transform.position = ((Translation)ev).coordinates;
+                            }
+                            else if (ev.type.Equals("scale"))
+                            {
+                                sceneInstance.transform.localScale = ((Scale)ev).scale;
+                            }
+                            else if (ev.type.Equals("rotation"))
+                            {
+                                sceneInstance.transform.rotation = ((Rotation)ev).rotation;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
