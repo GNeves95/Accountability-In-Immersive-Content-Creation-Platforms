@@ -73,6 +73,9 @@ public class TimelineController : MonoBehaviour
     [SerializeField]
     Material sceneGhostMat;
 
+    [SerializeField]
+    GameObject hiddenObjectsContainer;
+
     public void handleObjSelection(GameObject go)
     {
         if ((currentObject == null/* || currentObject != go*/) && !go.tag.Equals("Event"))
@@ -138,6 +141,18 @@ public class TimelineController : MonoBehaviour
             foreach (GameObject td in toDestroy)
             {
                 Destroy(td);
+            }
+
+            if (sceneView)
+            {
+                GameObject[] sceneObjects = GameObject.FindGameObjectsWithTag("SceneObject");
+                foreach (GameObject sceneObject in sceneObjects)
+                {
+                    if (sceneObject != currentObject)
+                    {
+                        sceneObject.transform.parent = hiddenObjectsContainer.transform;
+                    }
+                }
             }
 
             if (debug)
@@ -308,6 +323,15 @@ public class TimelineController : MonoBehaviour
             foreach (GameObject td in toDestroy)
             {
                 Destroy(td);
+            }
+
+            if (sceneView)
+            {
+                while (hiddenObjectsContainer.transform.childCount > 0)
+                {
+                    
+                    hiddenObjectsContainer.transform.GetChild(0).parent = null;
+                }
             }
         } else if (go.tag.Equals("Event"))
         {

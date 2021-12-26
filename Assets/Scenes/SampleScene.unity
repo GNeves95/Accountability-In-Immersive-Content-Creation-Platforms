@@ -1547,7 +1547,7 @@ MonoBehaviour:
   debug: 0
   transparentObjects: 1
   diffView: 1
-  sceneView: 0
+  sceneView: 1
   cube: {fileID: 275268529948680999, guid: 71f9ab809c22fba468c162d08b98612d, type: 3}
   cylinder: {fileID: 190771939337457933, guid: 04db7680f9abf184ab1cd4de5cab3dc8, type: 3}
   width: 0.05
@@ -1565,6 +1565,7 @@ MonoBehaviour:
   newGhostMat: {fileID: 2100000, guid: 88593106a18a82a428a4892a30f8e591, type: 2}
   oldGhostMat: {fileID: 2100000, guid: b365bec08900d614fb9921aefd0ba7c1, type: 2}
   sceneGhostMat: {fileID: 2100000, guid: c8873a7270a34a34fb08b380827ad7e8, type: 2}
+  hiddenObjectsContainer: {fileID: 1082573754}
 --- !u!4 &940021731
 Transform:
   m_ObjectHideFlags: 0
@@ -1929,6 +1930,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1082573754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1082573755}
+  m_Layer: 0
+  m_Name: Hidden Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1082573755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082573754}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36613223, y: 1.948437, z: 0.9528619}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188335228
 GameObject:

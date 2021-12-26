@@ -138,7 +138,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown("p"))
         {
-            Object.FindObjectOfType<SerialUISummoner>().showing = !(Object.FindObjectOfType<SerialUISummoner>().showing);
+            FindObjectOfType<SerialUISummoner>().showing = !(FindObjectOfType<SerialUISummoner>().showing);
         }
     }
 }
