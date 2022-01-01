@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MockHMDPrefab: {fileID: 7509684033999525845, guid: 004d09525f81ed541926ed03b0519d71, type: 3}
-  SteamVRPrefab: {fileID: 0}
+  SteamVRPrefab: {fileID: 4386401721513377014, guid: 2465d7f54e1c7e445aff4ad9c1cf4b55, type: 3}
 --- !u!4 &966788966
 Transform:
   m_ObjectHideFlags: 0
