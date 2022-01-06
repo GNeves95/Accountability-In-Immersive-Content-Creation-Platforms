@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using Valve.VR.InteractionSystem;
 
 public class Initiator : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Initiator : MonoBehaviour
 
     [SerializeField]
     GameObject SteamVRPrefab;
+
+    [SerializeField]
+    GameObject eventSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +24,11 @@ public class Initiator : MonoBehaviour
             Debug.Log("MockHMD Display");
         } else
         {
-            Debug.LogError("SteamVR not yet implemented");
+            eventSystem.SetActive(false);
+            //Debug.LogError("SteamVR not yet implemented");
+            Instantiate(SteamVRPrefab, new Vector3(0,0,0), Quaternion.identity);
+
+            HandCollider handCollider = FindObjectOfType<HandCollider>();
         }
     }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using VersionTimeline;
+using SplineMesh;
 
 public class TimelineController : MonoBehaviour
 {
@@ -34,6 +35,9 @@ public class TimelineController : MonoBehaviour
 
     [SerializeField]
     float width = 0.01f;
+
+    [SerializeField]
+    GameObject splinePrefab;
 
     public GameObject currentObject = null;
 
@@ -164,6 +168,12 @@ public class TimelineController : MonoBehaviour
 
             GameObject co = null;
 
+            SplineNode PreviousNode = null;
+            SplineNode CurrentNode = null;
+            int iterSpline = 0;
+
+            Spline spline = null;
+
             foreach (TimelineEvent eve in currentTimeline)
             {
                 Snapshot snapshot = new Snapshot(go, i);
@@ -187,7 +197,32 @@ public class TimelineController : MonoBehaviour
                         /*cube.GetComponent<SceneObject>().Id = "ev_" + this.ID + "_-~" + i;
                         cube.GetComponent<SceneObject>().parent = this.gameObject;
                         cube.GetComponent<SceneObject>().Eve = eve;*/
-                        if (present)
+
+                        //TODO: use spline instead of cylinder
+                        PreviousNode = CurrentNode;
+
+                        CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
+
+                        if (iterSpline > 0)
+                        {
+                            Vector3 dir = (CurrentNode.Position - PreviousNode.Position)/10;
+                            PreviousNode.Direction = dir;
+                            CurrentNode.Direction = dir;
+                            if (iterSpline == 1)
+                            {
+                                GameObject sp = Instantiate(splinePrefab);
+                                spline = sp.GetComponent<Spline>();
+                                spline.AddNode(PreviousNode);
+                                spline.RemoveNode(spline.nodes[0]);
+                            }
+                            spline.AddNode(CurrentNode);
+                            if (iterSpline == 1)
+                                spline.RemoveNode(spline.nodes[0]);
+                        }
+
+                        iterSpline++;
+
+                        /*if (present)
                         {
                             GameObject line = Instantiate(cylinder, (Point + last) / 2f, Quaternion.identity);
                             Vector3 dirV = Vector3.Normalize(Vector3.Normalize(Point - last) + new Vector3(0, 1, 0));
@@ -195,7 +230,7 @@ public class TimelineController : MonoBehaviour
                             line.transform.localScale = new Vector3(width, Vector3.Distance(last, Point) / 2, width);
                             line.tag = "Event";
                             line.GetComponent<Renderer>().material = mat;
-                        }
+                        }*/
                         last = Point;
                         currVerCont.scale = false;
                         currVerCont.rotate = false;
@@ -204,6 +239,28 @@ public class TimelineController : MonoBehaviour
                     } else
                     {
                         currVerCont = co.GetComponent<VersionControl>();
+                        PreviousNode = CurrentNode;
+
+                        CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
+
+                        if (iterSpline > 0)
+                        {
+                            Vector3 dir = (CurrentNode.Position - PreviousNode.Position) / 10;
+                            PreviousNode.Direction = dir;
+                            CurrentNode.Direction = dir;
+                            if (iterSpline == 1)
+                            {
+                                GameObject sp = Instantiate(splinePrefab);
+                                spline = sp.GetComponent<Spline>();
+                                spline.AddNode(PreviousNode);
+                                spline.RemoveNode(spline.nodes[0]);
+                            }
+                            spline.AddNode(CurrentNode);
+                            if (iterSpline == 1)
+                                spline.RemoveNode(spline.nodes[0]);
+                        }
+
+                        iterSpline++;
                     }
                     currVerCont.events.Add(ev);
 
@@ -229,7 +286,30 @@ public class TimelineController : MonoBehaviour
                         /*cube.GetComponent<SceneObject>().Id = "ev_" + this.ID + "_-~" + i;
                         cube.GetComponent<SceneObject>().parent = this.gameObject;
                         cube.GetComponent<SceneObject>().Eve = eve;*/
-                        if (present)
+                        PreviousNode = CurrentNode;
+
+                        CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
+
+                        if (iterSpline > 0)
+                        {
+                            Vector3 dir = (CurrentNode.Position - PreviousNode.Position)/10;
+                            PreviousNode.Direction = dir;
+                            CurrentNode.Direction = dir;
+                            if (iterSpline == 1)
+                            {
+                                GameObject sp = Instantiate(splinePrefab);
+                                spline = sp.GetComponent<Spline>();
+                                spline.AddNode(PreviousNode);
+                                spline.RemoveNode(spline.nodes[0]);
+                            }
+                            spline.AddNode(CurrentNode);
+                            if (iterSpline == 1)
+                                spline.RemoveNode(spline.nodes[0]);
+                        }
+
+                        iterSpline++;
+
+                        /*if (present)
                         {
                             GameObject line = Instantiate(cylinder, (Point + last) / 2f, Quaternion.identity);
                             Vector3 dirV = Vector3.Normalize(Vector3.Normalize(Point - last) + new Vector3(0, 1, 0));
@@ -237,7 +317,7 @@ public class TimelineController : MonoBehaviour
                             line.transform.localScale = new Vector3(width, Vector3.Distance(last, Point) / 2, width);
                             line.tag = "Event";
                             line.GetComponent<Renderer>().material = mat;
-                        }
+                        }*/
                         last = Point;
                         currVerCont.scale = false;
                         currVerCont.rotate = false;
@@ -246,6 +326,28 @@ public class TimelineController : MonoBehaviour
                     } else
                     {
                         currVerCont = co.GetComponent<VersionControl>();
+                        PreviousNode = CurrentNode;
+
+                        CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
+
+                        if (iterSpline > 0)
+                        {
+                            Vector3 dir = (CurrentNode.Position - PreviousNode.Position) / 10;
+                            PreviousNode.Direction = dir;
+                            CurrentNode.Direction = dir;
+                            if (iterSpline == 1)
+                            {
+                                GameObject sp = Instantiate(splinePrefab);
+                                spline = sp.GetComponent<Spline>();
+                                spline.AddNode(PreviousNode);
+                                spline.RemoveNode(spline.nodes[0]);
+                            }
+                            spline.AddNode(CurrentNode);
+                            if (iterSpline == 1)
+                                spline.RemoveNode(spline.nodes[0]);
+                        }
+
+                        iterSpline++;
                     }
                     currVerCont.events.Add(ev);
                     present = true;

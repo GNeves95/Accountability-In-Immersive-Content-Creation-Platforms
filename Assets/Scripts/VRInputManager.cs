@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class VRInputManager : MonoBehaviour
 {
@@ -13,10 +14,26 @@ public class VRInputManager : MonoBehaviour
     [SerializeField]
     Text user;
 
+    GameObject leftController;
+
+    GameObject rightController;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        HandCollider[] controllers = FindObjectsOfType<HandCollider>();
+        Physics.IgnoreLayerCollision(6, 0, true);
+
+        foreach (HandCollider handCollider in controllers)
+        {
+            GameObject handController = handCollider.gameObject;
+            handController.layer = 6;
+            handCollider.fingerColliders.indexColliders[0].gameObject.AddComponent<VRCollider>();
+            if (handController.name.Contains("Left"))
+                leftController = handController;
+            if (handController.name.Contains("Right"))
+                rightController = handController;
+        }
     }
 
     // Update is called once per frame
@@ -63,9 +80,22 @@ public class VRInputManager : MonoBehaviour
             RightController.transform.GetChild(0).gameObject.GetComponent<collisionDetection>().EndPoint();
         }*/
 
-        if (pointAction.GetState(SteamVR_Input_Sources.Any))
+        if (pointAction.GetState(SteamVR_Input_Sources.LeftHand))
         {
             Debug.Log("Started pointing");
+            leftController.GetComponentInChildren<VRCollider>().pointing = true;
+        } else
+        {
+            leftController.GetComponentInChildren<VRCollider>().pointing = false;
+        }
+        if (pointAction.GetState(SteamVR_Input_Sources.RightHand))
+        {
+            Debug.Log("Started pointing");
+            rightController.GetComponentInChildren<VRCollider>().pointing = true;
+        }
+        else
+        {
+            rightController.GetComponentInChildren<VRCollider>().pointing = false;
         }
 
 

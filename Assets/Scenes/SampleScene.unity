@@ -1545,12 +1545,13 @@ MonoBehaviour:
   scene: 0
   initiator: {fileID: 0}
   debug: 0
-  transparentObjects: 0
+  transparentObjects: 1
   diffView: 0
   sceneView: 0
   cube: {fileID: 275268529948680999, guid: 71f9ab809c22fba468c162d08b98612d, type: 3}
   cylinder: {fileID: 190771939337457933, guid: 04db7680f9abf184ab1cd4de5cab3dc8, type: 3}
   width: 0.05
+  splinePrefab: {fileID: 3362597939489164099, guid: 999a4ecff198b244196274c1eda9829b, type: 3}
   currentObject: {fileID: 0}
   showTimeline: 0
   currentTimeline: []
@@ -1681,6 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MockHMDPrefab: {fileID: 7509684033999525845, guid: 004d09525f81ed541926ed03b0519d71, type: 3}
   SteamVRPrefab: {fileID: 4386401721513377014, guid: 2465d7f54e1c7e445aff4ad9c1cf4b55, type: 3}
+  eventSystem: {fileID: 1041303597}
 --- !u!4 &966788966
 Transform:
   m_ObjectHideFlags: 0
