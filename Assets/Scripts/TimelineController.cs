@@ -69,6 +69,12 @@ public class TimelineController : MonoBehaviour
     GameObject eventPrefab;
 
     [SerializeField]
+    GameObject leftFramePrefab;
+
+    [SerializeField]
+    GameObject rightFramePrefab;
+
+    [SerializeField]
     Material newGhostMat;
 
     [SerializeField]
@@ -199,7 +205,7 @@ public class TimelineController : MonoBehaviour
                         cube.GetComponent<SceneObject>().Eve = eve;*/
 
                         //TODO: use spline instead of cylinder
-                        PreviousNode = CurrentNode;
+                        /*PreviousNode = CurrentNode;
 
                         CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
 
@@ -220,9 +226,9 @@ public class TimelineController : MonoBehaviour
                                 spline.RemoveNode(spline.nodes[0]);
                         }
 
-                        iterSpline++;
+                        iterSpline++;*/
 
-                        /*if (present)
+                        if (present)
                         {
                             GameObject line = Instantiate(cylinder, (Point + last) / 2f, Quaternion.identity);
                             Vector3 dirV = Vector3.Normalize(Vector3.Normalize(Point - last) + new Vector3(0, 1, 0));
@@ -230,7 +236,7 @@ public class TimelineController : MonoBehaviour
                             line.transform.localScale = new Vector3(width, Vector3.Distance(last, Point) / 2, width);
                             line.tag = "Event";
                             line.GetComponent<Renderer>().material = mat;
-                        }*/
+                        }
                         last = Point;
                         currVerCont.scale = false;
                         currVerCont.rotate = false;
@@ -239,7 +245,7 @@ public class TimelineController : MonoBehaviour
                     } else
                     {
                         currVerCont = co.GetComponent<VersionControl>();
-                        PreviousNode = CurrentNode;
+                        /*PreviousNode = CurrentNode;
 
                         CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
 
@@ -260,7 +266,7 @@ public class TimelineController : MonoBehaviour
                                 spline.RemoveNode(spline.nodes[0]);
                         }
 
-                        iterSpline++;
+                        iterSpline++;*/
                     }
                     currVerCont.events.Add(ev);
 
@@ -286,7 +292,7 @@ public class TimelineController : MonoBehaviour
                         /*cube.GetComponent<SceneObject>().Id = "ev_" + this.ID + "_-~" + i;
                         cube.GetComponent<SceneObject>().parent = this.gameObject;
                         cube.GetComponent<SceneObject>().Eve = eve;*/
-                        PreviousNode = CurrentNode;
+                        /*PreviousNode = CurrentNode;
 
                         CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
 
@@ -307,9 +313,9 @@ public class TimelineController : MonoBehaviour
                                 spline.RemoveNode(spline.nodes[0]);
                         }
 
-                        iterSpline++;
+                        iterSpline++;*/
 
-                        /*if (present)
+                        if (present)
                         {
                             GameObject line = Instantiate(cylinder, (Point + last) / 2f, Quaternion.identity);
                             Vector3 dirV = Vector3.Normalize(Vector3.Normalize(Point - last) + new Vector3(0, 1, 0));
@@ -317,7 +323,7 @@ public class TimelineController : MonoBehaviour
                             line.transform.localScale = new Vector3(width, Vector3.Distance(last, Point) / 2, width);
                             line.tag = "Event";
                             line.GetComponent<Renderer>().material = mat;
-                        }*/
+                        }
                         last = Point;
                         currVerCont.scale = false;
                         currVerCont.rotate = false;
@@ -328,7 +334,7 @@ public class TimelineController : MonoBehaviour
                         currVerCont = co.GetComponent<VersionControl>();
                         PreviousNode = CurrentNode;
 
-                        CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
+                        /*CurrentNode = new SplineNode(co.transform.position, Vector3.zero);
 
                         if (iterSpline > 0)
                         {
@@ -347,7 +353,7 @@ public class TimelineController : MonoBehaviour
                                 spline.RemoveNode(spline.nodes[0]);
                         }
 
-                        iterSpline++;
+                        iterSpline++;*/
                     }
                     currVerCont.events.Add(ev);
                     present = true;
@@ -465,6 +471,13 @@ public class TimelineController : MonoBehaviour
             GameObject panel = Instantiate(overlayPrefab, position, Quaternion.identity);
             Transform content = panel.transform.GetChild(0);
 
+            GameObject lefttFrame = Instantiate(leftFramePrefab);
+            lefttFrame.transform.SetParent(content);
+            RectTransform lftran = lefttFrame.GetComponent<RectTransform>();
+
+            lftran.localPosition = Vector3.zero;
+            lftran.localScale = new Vector3(1, 15, 10);
+
             events.ForEach(delegate (TimelineEvent ev) {
                 GameObject eve = Instantiate(eventPrefab);
                 Snapshot eveSnap = ev.snapshot;
@@ -494,6 +507,13 @@ public class TimelineController : MonoBehaviour
                 Transform textTran = eve.transform.GetChild(1);
                 textTran.GetComponent<Text>().text = ev.user +"\n" + ev.type + "\n" + DateTime.FromFileTimeUtc(ev.when);
             });
+
+            GameObject rightFrame = Instantiate(rightFramePrefab);
+            rightFrame.transform.SetParent(content);
+            RectTransform rftran = rightFrame.GetComponent<RectTransform>();
+
+            rftran.localPosition = Vector3.zero;
+            rftran.localScale = new Vector3(1, 15, 10);
         }
         else if (go.tag.Equals("Snapshot"))
         {

@@ -21,14 +21,15 @@ public class VRInputManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HandCollider[] controllers = FindObjectsOfType<HandCollider>();
-        Physics.IgnoreLayerCollision(6, 0, true);
+        Hand[] controllers = FindObjectsOfType<Hand>();
+        //Physics.IgnoreLayerCollision(6, 0, true);
 
-        foreach (HandCollider handCollider in controllers)
+        foreach (Hand handCollider in controllers)
         {
             GameObject handController = handCollider.gameObject;
             handController.layer = 6;
-            handCollider.fingerColliders.indexColliders[0].gameObject.AddComponent<VRCollider>();
+            //handCollider.fingerColliders.indexColliders[0].gameObject.AddComponent<VRCollider>();
+            handController.AddComponent<VRCollider>();
             if (handController.name.Contains("Left"))
                 leftController = handController;
             if (handController.name.Contains("Right"))
@@ -82,20 +83,20 @@ public class VRInputManager : MonoBehaviour
 
         if (pointAction.GetState(SteamVR_Input_Sources.LeftHand))
         {
-            Debug.Log("Started pointing");
-            leftController.GetComponentInChildren<VRCollider>().pointing = true;
+            //Debug.Log("Started pointing");
+            leftController.GetComponent<VRCollider>().pointing = true;
         } else
         {
-            leftController.GetComponentInChildren<VRCollider>().pointing = false;
+            leftController.GetComponent<VRCollider>().pointing = false;
         }
         if (pointAction.GetState(SteamVR_Input_Sources.RightHand))
         {
-            Debug.Log("Started pointing");
-            rightController.GetComponentInChildren<VRCollider>().pointing = true;
+            //Debug.Log("Started pointing");
+            rightController.GetComponent<VRCollider>().pointing = true;
         }
         else
         {
-            rightController.GetComponentInChildren<VRCollider>().pointing = false;
+            rightController.GetComponent<VRCollider>().pointing = false;
         }
 
 

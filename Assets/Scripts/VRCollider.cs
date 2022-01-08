@@ -21,6 +21,7 @@ public class VRCollider : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("I touched");
         inContact = other.gameObject;
         if (pointing)
         {

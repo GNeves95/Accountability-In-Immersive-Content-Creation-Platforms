@@ -4059,7 +4059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointAction:
-    actionPath: /actions/default/in/GrabPinch
+    actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
   user: {fileID: 4781085026560339963}
 --- !u!1 &1552139372658455700
