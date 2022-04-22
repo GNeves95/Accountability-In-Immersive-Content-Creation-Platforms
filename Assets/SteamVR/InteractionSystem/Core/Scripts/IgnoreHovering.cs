@@ -1,17 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-//
-// Purpose: Makes this object ignore any hovering by the hands
-//
-//=============================================================================
-
-using UnityEngine;
-
-namespace Valve.VR.InteractionSystem
-{
-	//-------------------------------------------------------------------------
-	public class IgnoreHovering : MonoBehaviour
-	{
-		[Tooltip( "If Hand is not null, only ignore the specified hand" )]
-		public Hand onlyIgnoreHand = null;
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:dca17f394d91e5151ffdafed0c50c7cf8898886ee7e52f9531e998147a7ed18f
+size 528

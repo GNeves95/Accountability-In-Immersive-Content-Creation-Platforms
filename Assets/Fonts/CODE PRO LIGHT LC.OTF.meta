@@ -1,21 +1,3 @@
-fileFormatVersion: 2
-guid: a9e724f9fee6a0c4e9ab99ded4e5455c
-TrueTypeFontImporter:
-  externalObjects: {}
-  serializedVersion: 4
-  fontSize: 16
-  forceTextureCase: -2
-  characterSpacing: 0
-  characterPadding: 1
-  includeFontData: 1
-  fontNames:
-  - Code Pro Light LC
-  fallbackFontReferences: []
-  customCharacters: 
-  fontRenderingMode: 0
-  ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 1
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:20d33b8b0073d082978f67106a5b12b50cd5eb1c573f82ab6f23741fa3787ca5
+size 482

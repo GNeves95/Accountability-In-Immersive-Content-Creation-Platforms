@@ -1,25 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-//
-// Purpose: Makes the weeble wobble
-//
-//=============================================================================
-
-using UnityEngine;
-using System.Collections;
-
-namespace Valve.VR.InteractionSystem
-{
-	//-------------------------------------------------------------------------
-	public class ExplosionWobble : MonoBehaviour
-	{
-		//-------------------------------------------------
-		public void ExplosionEvent( Vector3 explosionPos )
-		{
-			var rb = GetComponent<Rigidbody>();
-			if ( rb )
-			{
-				rb.AddExplosionForce( 2000, explosionPos, 10.0f );
-			}
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0cbf4249bfbc92914fe3f8208e76a8f7604ca589e26205adb626bb8a0f2e1bff
+size 654

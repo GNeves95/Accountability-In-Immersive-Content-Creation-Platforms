@@ -1,30 +1,3 @@
-﻿using UnityEngine;
-using System.Collections;
-
-namespace Valve.VR.InteractionSystem.Sample
-{
-    public class trackObj : MonoBehaviour
-    {
-        public Transform target;
-        public float speed;
-
-        public bool negative;
-
-        private void Update()
-        {
-            Vector3 look = target.position - transform.position;
-            if (negative)
-            {
-                look = -look;
-            }
-            if (speed == 0)
-            {
-                transform.rotation = Quaternion.LookRotation(look);
-            }
-            else
-            {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(look), speed * Time.deltaTime);
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a7099bcfbd8cdbe0d22108936d9163f3f2d43726e6fba4684fce0a3e80b0d8cc
+size 749

@@ -1,23 +1,3 @@
-﻿using UnityEngine;
-using UnityEditor;
-using System;
-
-namespace SplineMesh {
-    [Serializable]
-    public class MeshVertex {
-        public Vector3 position;
-        public Vector3 normal;
-        public Vector2 uv;
-
-        public MeshVertex(Vector3 position, Vector3 normal, Vector2 uv) {
-            this.position = position;
-            this.normal = normal;
-            this.uv = uv;
-        }
-
-        public MeshVertex(Vector3 position, Vector3 normal)
-            : this(position, normal, Vector2.zero)
-        {
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ee34888e67b2f7f9bd132d2cd7f02b327135ed008b77fa68259945e2c27ddf2e
+size 541

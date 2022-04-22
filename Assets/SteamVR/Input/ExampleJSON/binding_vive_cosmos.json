@@ -1,27 +1,3 @@
-{
-  "alias_info": {},
-  "bindings": {
-    "/actions/default": {
-      "chords": [],
-      "haptics": [],
-      "poses": [],
-      "skeleton": [],
-      "sources": [
-        {
-          "inputs": {
-            "click": {
-              "output": "/actions/default/in/headsetonhead"
-            }
-          },
-          "mode": "button",
-          "path": "/user/head/proximity"
-        }
-      ]
-    }
-  },
-  "controller_type": "vive_cosmos",
-  "description": "",
-  "name": "vive cosmos hmd defaults",
-  "options": {},
-  "simulated_actions": []
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:28a43b6e37488dce7d724408b465f7684e6d6db7006a8c7d22caea0f321770bc
+size 545

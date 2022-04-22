@@ -1,14 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-
-
-namespace Valve.VR
-{
-    public enum SteamVR_UpdateModes
-    {
-        Nothing = (1 << 0),
-        OnUpdate = (1 << 1),
-        OnFixedUpdate = (1 << 2),
-        OnPreCull = (1 << 3),
-        OnLateUpdate = (1 << 4),
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:bfac1def1b8e060245bc77667a24bae629cf3ab3dcbbbd9af8106dac7d2524c2
+size 309

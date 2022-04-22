@@ -1,36 +1,3 @@
-{
-    "name": "SteamVR_Editor",
-    "references": [
-        "SteamVR",
-        "Unity.XR.OpenVR",
-        "Unity.XR.Management.Editor",
-        "Unity.XR.Management"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [
-        {
-            "name": "com.valvesoftware.unity.openvr",
-            "expression": "",
-            "define": "OPENVR_XR_API"
-        },
-        {
-            "name": "com.unity.xr.management",
-            "expression": "3.2.0",
-            "define": "XR_MGMT_GTE_320"
-        },
-        {
-            "name": "com.unity.xr.management",
-            "expression": "",
-            "define": "XR_MGMT"
-        }
-    ],
-    "noEngineReferences": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0f16f0c3ea7261eedf19d668b27626d0a801de67e23b39614b612aeb91967ad8
+size 883

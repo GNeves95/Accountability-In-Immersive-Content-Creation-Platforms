@@ -1,18 +1,3 @@
-{
-    "name": "SteamVR_Input_Editor",
-    "references": [
-        "SteamVR",
-        "Unity.XR.OpenVR"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2050e7f8153b1095159b2db2ffee408859235c7db6e8924b4f85b3aaa528e98f
+size 400

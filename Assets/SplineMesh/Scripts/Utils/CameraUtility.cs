@@ -1,14 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-
-namespace SplineMesh {
-    public static class CameraUtility {
-        public static bool IsOnScreen(Vector3 position) {
-            Vector3 onScreen = Camera.current.WorldToViewportPoint(position);
-            return onScreen.z > 0 && onScreen.x > 0 && onScreen.y > 0 && onScreen.x < 1 && onScreen.y < 1;
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2c69227b2e0ca70c44ea46655fc31f7b5126a32bc6849cfdb7abec70e6033200
+size 433

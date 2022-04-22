@@ -1,31 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-//
-// Purpose: Provides a haptic bump when colliding with balloons
-//
-//=============================================================================
-
-using UnityEngine;
-using System.Collections;
-
-namespace Valve.VR.InteractionSystem
-{
-	//-------------------------------------------------------------------------
-	public class BalloonHapticBump : MonoBehaviour
-	{
-		public GameObject physParent;
-
-		//-------------------------------------------------
-		void OnCollisionEnter( Collision other )
-		{
-			Balloon contactBalloon = other.collider.GetComponentInParent<Balloon>();
-			if ( contactBalloon != null )
-			{
-				Hand hand = physParent.GetComponentInParent<Hand>();
-				if ( hand != null )
-				{
-					hand.TriggerHapticPulse( 500 );
-				}
-			}
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:73498f60afd2b53f5b9719757cdac96221368efb30674383739464b98603cd88
+size 839

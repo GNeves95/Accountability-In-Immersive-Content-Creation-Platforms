@@ -1,27 +1,3 @@
-{
-  "alias_info": {},
-  "bindings": {
-    "/actions/default": {
-      "chords": [],
-      "haptics": [],
-      "poses": [],
-      "skeleton": [],
-      "sources": [
-        {
-          "inputs": {
-            "click": {
-              "output": "/actions/default/in/headsetonhead"
-            }
-          },
-          "mode": "button",
-          "path": "/user/head/proximity"
-        }
-      ]
-    }
-  },
-  "controller_type": "indexhmd",
-  "description": "",
-  "name": "index hmd defaults",
-  "options": {},
-  "simulated_actions": []
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:973dd0770b33466e30b574da980797b7f812479bcbc727c32c1774ea53979618
+size 536

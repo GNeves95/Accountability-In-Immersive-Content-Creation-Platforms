@@ -1,18 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Valve.VR.InteractionSystem
-{
-    public enum GrabTypes
-    {
-        None,
-        Trigger,
-        Pinch,
-        Grip,
-        Scripted,
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:3488ead497b384145facb70adaec2ca06cc233eef5a024a2ac29a0607c8f27ae
+size 328

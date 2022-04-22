@@ -1,29 +1,3 @@
-﻿using UnityEngine;
-using System.Collections;
-
-namespace Valve.VR.InteractionSystem.Sample
-{
-    public class trackCam : MonoBehaviour
-    {
-        public float speed;
-
-        public bool negative;
-
-        void Update()
-        {
-            Vector3 look = Camera.main.transform.position - transform.position;
-            if (negative)
-            {
-                look = -look;
-            }
-            if (speed == 0)
-            {
-                transform.rotation = Quaternion.LookRotation(look);
-            }
-            else
-            {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(look), speed * Time.deltaTime);
-            }
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:411c57ea79cccfd65eb68b0a07379ced7d87f3a3a4d386d03d78bddef5d5cbeb
+size 723

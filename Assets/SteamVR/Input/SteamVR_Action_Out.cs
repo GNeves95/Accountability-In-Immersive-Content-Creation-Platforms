@@ -1,30 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-
-using UnityEngine;
-using System.Collections;
-using System;
-using Valve.VR;
-using System.Runtime.InteropServices;
-using System.Collections.Generic;
-
-namespace Valve.VR
-{
-    [Serializable]
-    public abstract class SteamVR_Action_Out<SourceMap, SourceElement> : SteamVR_Action<SourceMap, SourceElement>, ISteamVR_Action_Out
-        where SourceMap : SteamVR_Action_Source_Map<SourceElement>, new()
-        where SourceElement : SteamVR_Action_Out_Source, new()
-    {
-    }
-
-    public abstract class SteamVR_Action_Out_Source : SteamVR_Action_Source, ISteamVR_Action_Out_Source
-    {
-    }
-
-    public interface ISteamVR_Action_Out : ISteamVR_Action, ISteamVR_Action_Out_Source
-    {
-    }
-
-    public interface ISteamVR_Action_Out_Source : ISteamVR_Action_Source
-    {
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9cc1acb1851f7340402e5671840578ba1291e56ed171a6c0803612ee6f50fd74
+size 860

@@ -1,20 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-//
-// Purpose: Flips the camera output back to normal for D3D.
-//
-//=============================================================================
-
-using UnityEngine;
-
-namespace Valve.VR
-{
-    [ExecuteInEditMode]
-    public class SteamVR_CameraFlip : MonoBehaviour
-    {
-        void Awake()
-        {
-            Debug.Log("<b>[SteamVR]</b> SteamVR_CameraFlip is deprecated in Unity 5.4 - REMOVING");
-            DestroyImmediate(this);
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c01b5a2075352957270ce341fd20f617e23031cc025f40bdb35e255e5e77b9d5
+size 537

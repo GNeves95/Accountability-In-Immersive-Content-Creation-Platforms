@@ -1,21 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-//
-// Purpose: This object won't be destroyed when a new scene is loaded
-//
-//=============================================================================
-
-using UnityEngine;
-using System.Collections;
-
-namespace Valve.VR.InteractionSystem
-{
-	//-------------------------------------------------------------------------
-	public class DontDestroyOnLoad : MonoBehaviour
-	{
-		//-------------------------------------------------
-		void Awake()
-		{
-			DontDestroyOnLoad( this );
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c26d38601fe1946a089ce6f30e026bf3ae83c9e617f5a16b498822dd61165ed4
+size 565

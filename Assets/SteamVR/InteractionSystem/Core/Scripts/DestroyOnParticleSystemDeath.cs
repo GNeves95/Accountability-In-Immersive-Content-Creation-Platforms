@@ -1,36 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-//
-// Purpose: Destroys this object when its particle system dies
-//
-//=============================================================================
-
-using UnityEngine;
-using System.Collections;
-
-namespace Valve.VR.InteractionSystem
-{
-	//-------------------------------------------------------------------------
-	[RequireComponent( typeof( ParticleSystem ) )]
-	public class DestroyOnParticleSystemDeath : MonoBehaviour
-	{
-		private ParticleSystem particles;
-
-		//-------------------------------------------------
-		void Awake()
-		{
-			particles = GetComponent<ParticleSystem>();
-
-			InvokeRepeating( "CheckParticleSystem", 0.1f, 0.1f );
-		}
-
-
-		//-------------------------------------------------
-		private void CheckParticleSystem()
-		{
-			if ( !particles.IsAlive() )
-			{
-				Destroy( this.gameObject );
-			}
-		}
-	}
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2ec3d397b723724727650e7f95e83ce3f66d17f28478102cc0231745f3ce1479
+size 903

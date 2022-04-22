@@ -1,13 +1,3 @@
-﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
-
-namespace Valve.VR
-{
-    /// <summary>
-    /// The direction the the action. In actions get input, Out actions send input.
-    /// </summary>
-    public enum SteamVR_ActionDirections
-    {
-        In,
-        Out,
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2eb4e467960fb17693097289121047960efe5f1e11eddbc3649068866b9c3603
+size 305

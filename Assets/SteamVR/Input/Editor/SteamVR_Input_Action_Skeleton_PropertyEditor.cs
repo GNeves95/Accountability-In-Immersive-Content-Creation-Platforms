@@ -1,22 +1,3 @@
-﻿using UnityEditor;
-using UnityEngine;
-
-using System.CodeDom;
-using Microsoft.CSharp;
-using System.IO;
-using System.CodeDom.Compiler;
-
-using System.Linq;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq.Expressions;
-using System;
-
-
-namespace Valve.VR
-{
-    [CustomPropertyDrawer(typeof(SteamVR_Action_Skeleton))]
-    public class SteamVR_Input_Action_Skeleton_PropertyEditor : SteamVR_Input_Action_GenericPropertyEditor<SteamVR_Action_Skeleton>
-    {
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0a71a72ca553a555fd9244dad73e44ad416c433e37015c7a81d6fa2f91575800
+size 488
