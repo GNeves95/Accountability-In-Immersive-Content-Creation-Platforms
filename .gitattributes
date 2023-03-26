@@ -1,5 +1,4 @@
 * text=auto
-
 # Unity files
 *.meta -text merge=unityyamlmerge diff
 *.unity -text merge=unityyamlmerge diff
@@ -78,6 +77,7 @@
 *.gz filter=lfs diff=lfs merge=lfs -text
 *.rar filter=lfs diff=lfs merge=lfs -text
 *.tar filter=lfs diff=lfs merge=lfs -text
+Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
 *.gitignore filter=lfs diff=lfs merge=lfs -text
 *.vsconfig filter=lfs diff=lfs merge=lfs -text
 *.meta filter=lfs diff=lfs merge=lfs -text
